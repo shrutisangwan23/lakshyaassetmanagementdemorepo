@@ -1,7 +1,7 @@
 package com.assetmanagement.demo.service;
 
 import com.assetmanagement.demo.model.Category;
-import com.assetmanagement.demo.repository.categoryRepository;
+import com.assetmanagement.demo.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.assetmanagement.demo.repository.AssetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class CategoryService {
 
     @Autowired
-    categoryRepository categoryRepository;
+    CategoryRepository categoryRepository;
 
     public Category getCategoryById(int id) {
         return categoryRepository.findById(id).get();

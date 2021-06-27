@@ -19,7 +19,7 @@ import com.assetmanagement.demo.democontroller.AssetController;
 import com.assetmanagement.demo.model.Asset;
 import com.assetmanagement.demo.service.AssetService;
 
-public class assetControllerTest {
+public class AssetControllerTest {
 
     @InjectMocks                        //Injecting Mocks in assetController class
     AssetController assetController;
