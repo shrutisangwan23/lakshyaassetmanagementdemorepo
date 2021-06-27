@@ -1,9 +1,9 @@
 package com.assetmanagement.demo.democontroller;
 
 import com.assetmanagement.demo.model.Category;
-import com.assetmanagement.demo.model.asset;
-import com.assetmanagement.demo.service.assetService;
-import com.assetmanagement.demo.service.categoryService;
+import com.assetmanagement.demo.model.Asset;
+import com.assetmanagement.demo.service.AssetService;
+import com.assetmanagement.demo.service.CategoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,22 +11,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class assetController {
+public class AssetController {
 
     @Autowired
-    assetService assetService;
+    AssetService assetService;
     
     @Autowired
-    categoryService categoryService;
+    CategoryService categoryService;
 
     @GetMapping("/asset")
-    private List<asset> getAllasset()
+    private List<Asset> getAllasset()
     {
 
         return assetService.getAllAsset();
     }
     @GetMapping("/asset/{id}")
-    private asset getAsset(@PathVariable("id") int name)
+    public Asset getAsset(@PathVariable("id") int name)
     {
 
         return assetService.getAssetById(name);
@@ -39,7 +39,7 @@ public class assetController {
     }
 
     @PostMapping("/updateAsset")
-    private int updateAsset(asset asset)
+    private int updateAsset(Asset asset)
     {
         assetService.saveOrUpdate(asset);
         return asset.getAssignedEmployeeId();

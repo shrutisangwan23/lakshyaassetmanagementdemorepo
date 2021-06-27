@@ -3,12 +3,12 @@ package com.assetmanagement.demo.service;
 import com.assetmanagement.demo.model.Category;
 import com.assetmanagement.demo.repository.categoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.assetmanagement.demo.repository.assetRepository;
+import com.assetmanagement.demo.repository.AssetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class categoryService {
+public class CategoryService {
 
     @Autowired
     categoryRepository categoryRepository;
