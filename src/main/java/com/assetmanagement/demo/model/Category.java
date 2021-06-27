@@ -1,19 +1,19 @@
 package com.assetmanagement.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table
 public class Category {
-    @Id
-    @Column
+	@Id
+    @GeneratedValue
     int id;
-    @Column
+    
     String name;
-    @Column
+   
     String description;
 
     public int getId() {

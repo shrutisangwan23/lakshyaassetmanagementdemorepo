@@ -26,23 +26,23 @@ public class assetController {
         return assetService.getAllAsset();
     }
     @GetMapping("/asset/{id}")
-    private asset getAsset(@PathVariable("id") String name)
+    private asset getAsset(@PathVariable("id") int name)
     {
 
         return assetService.getAssetById(name);
     }
 
     @DeleteMapping
-    private void deleteAsset(@PathVariable("id") String name)
+    private void deleteAsset(@PathVariable("id") int name)
     {
         assetService.delete(name);
     }
 
     @PostMapping("/updateAsset")
-    private String updateAsset(asset asset)
+    private int updateAsset(asset asset)
     {
         assetService.saveOrUpdate(asset);
-        return asset.getName();
+        return asset.getAssignedEmployeeId();
     }
 
    
@@ -54,10 +54,10 @@ public class assetController {
     }
 
     @PostMapping("/updateCategory")
-    private String updateCategoryAsset(Category category)
+    private int updateCategoryAsset(Category category)
     {
         categoryService.saveOrUpdate(category);
-        return category.getName();
+        return category.getId();
     }
 
 

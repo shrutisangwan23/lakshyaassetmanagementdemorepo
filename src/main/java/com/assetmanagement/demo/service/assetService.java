@@ -20,12 +20,12 @@ public class assetService {
         return assets;
     }
 
-    public asset getAssetById(String name) {
-        return assetRepository.findById(name).get();
+    public asset getAssetById(int id) {
+        return assetRepository.findById(id).get();
     }
 
-    public void delete(String name){
-        assetRepository.deleteById(name);
+    public void delete(int id){
+        assetRepository.deleteById(id);
     }
 
     public void saveOrUpdate(asset asset) {
@@ -33,14 +33,14 @@ public class assetService {
     }
 
     public void assignAsset(String name, int empID) {
-        asset asset = getAssetById(name);
+        asset asset = getAssetById(empID);
         asset.setAssignmentStatus("Assigned");
         asset.setAssignedEmployeeId(empID);
         saveOrUpdate(asset);
     }
 
-    public void recoverAsset(String name) {
-        asset asset = getAssetById(name);
+    public void recoverAsset(int id) {
+        asset asset = getAssetById(id);
         asset.setAssignmentStatus("Recovered");
         saveOrUpdate(asset);
     }

@@ -1,28 +1,29 @@
 package com.assetmanagement.demo.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table
 public class asset{
 
-    @Id
-    @Column
-    String name;
-    @Column
-    Date purchaseDate;
-    @Column
-    String conditionNotes;
-    @Column
-    String category;
-    @Column
-    String assignmentStatus;
-    @Column
+	@Id
+    @GeneratedValue
     int assignedEmployeeId;
+   
+    String name;
+    
+    Date purchaseDate;
+    
+    String conditionNotes;
+    
+    String category;
+    
+    String assignmentStatus;
+    
 
     public String getName() {
         return name;
